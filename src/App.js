@@ -11,6 +11,7 @@ import Register from './Pages/Register/Register';
 import Login from './Pages/Login/Login';
 import Checkout from './Pages/Checkout/Checkout';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
+import ResetPassword from './Pages/ResetPassword/ResetPassword';
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
           </RequireAuth>
         }></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/resetpassword' element={<ResetPassword></ResetPassword>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
