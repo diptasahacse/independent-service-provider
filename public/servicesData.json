@@ -9,14 +9,14 @@
     {
         "id": 2,
         "name": "BEST OPTION",
-        "price": "2500",
+        "price": "3000",
         "descriptionList": ["– 8 hours coverage","– Online gallery","– Wedding Album","– Special services"],
-        "img": "https://i.ibb.co/8bzDRpp/service2.png"
+        "img": "https://i.ibb.co/6bN8Dsx/service2.jpg"
     },
     {
         "id": 3,
         "name": "SMART PACKAGE",
-        "price": "2500",
+        "price": "4000",
         "descriptionList": ["– 6 hours coverage","– Online gallery","– Wedding Album","– Wedding movie"],
         "img": "https://i.ibb.co/kqzCpTK/service3.png"
     }
