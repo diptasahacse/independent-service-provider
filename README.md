@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+# Wedding Click
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Site Link [Wedding Click] (https://independent-service-prov-d625d.web.app/)
 
-## Available Scripts
+## All Features
+> This Website is about Wedding Photography. The purpose of this website is sell some services about wedding photography. each service contain service name, image, description, price and checkout button. When user click on the button then user go to Checkout page if the logged in. otherwise He/She go to Login page. That is happened for Require Auth. Other features is user can register, login with email and password and login with Google and user can reset his password.
 
-In the project directory, you can run:
+* Home Page : In the Home page, You will see Header, Banner, Services and Footer. Header part contain site name and nav link, Banner part contain Image slider, Service Section contain 3 services about wedding photography and footer part contain some Copyright text.
+* About Page: In About page contain my name, Image, and I have describe about my Goal.
+* Blog Page : Blog page contain 3 Question with answer. Q1. What is the difference between Authentication and Authorization..? Q2.Why are you using firebase? What other options do you have to implement authentication? Q3. What other services does firebase provide other than authentication.?
+* Checkout Page: This page is Protected. means if you want to visit this page, you must a logged in user. otherwise you can not visit this page. this page contain what service user choose to buy. and shipping form with user's details.
+* Login, Register And Reset Password Page : In Login page, only verified user can login. if he is a new user then he have to visit register page or he have to signin with google. if Email password user forgot his password then he can visit reset password page and reset his password by putting his email.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## All Tools and Technology I Have used in this project
+* React 18
+* React Router
+* React Firebase Hooks
+* Bootstrap
+* Firebase
+* React Toastify
