@@ -13,7 +13,7 @@ const Header = () => {
     return (
         <Navbar bg="light" expand="lg">
             <Container>
-                <Link to='/' className='navbar-brand'>Wedding Click</Link>
+                <Link to='/' className='navbar-brand fw-bold text-primary'>Wedding Click</Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
