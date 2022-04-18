@@ -1,6 +1,6 @@
 # Wedding Click
 
-Live Site Link [Wedding Click] (https://independent-service-prov-d625d.web.app/)
+Live Site Link [Wedding Click](https://independent-service-prov-d625d.web.app/).
 
 ## All Features
 > This Website is about Wedding Photography. The purpose of this website is sell some services about wedding photography. each service contain service name, image, description, price and checkout button. When user click on the button then user go to Checkout page if the logged in. otherwise He/She go to Login page. That is happened for Require Auth. Other features is user can register, login with email and password and login with Google and user can reset his password.
