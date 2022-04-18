@@ -13,6 +13,7 @@ const Register = () => {
     const passwordRef = useRef('')
     const navigate = useNavigate();
     let message;
+    let errorMessage;
     const [
         createUserWithEmailAndPassword,
         user,
@@ -48,7 +49,11 @@ const Register = () => {
         }
 
     }
-    
+    if (error || updateError) {
+        errorMessage = error ? error.message : updateError.message;
+
+    }
+
     return (
         <Container>
             <div className='text-center mt-5'>
@@ -76,8 +81,10 @@ const Register = () => {
                         <Form.Check type="checkbox" label="Agree to out terms and conditions" />
                     </Form.Group>
                     {
-                        message? <p className='text-success'>{message}</p> : ''
+                        message ? <p className='text-success'>{message}</p> : ''
                     }
+
+                    <p className='text-danger'>{errorMessage ? errorMessage : ''}</p>
                     <div className='d-flex justify-content-between align-items-center'>
                         <Button disabled={!isChecked} size='sm' variant="primary" type="submit">
                             Register

@@ -54,7 +54,7 @@ const Login = () => {
                 <Form onSubmit={loginFormSubmitHandler}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control ref={emailRef} type="email" placeholder="Enter email" />
+                        <Form.Control required ref={emailRef} type="email" placeholder="Enter email" />
                         <Form.Text className="text-muted">
                             We'll never share your email with anyone else.
                         </Form.Text>
@@ -62,7 +62,7 @@ const Login = () => {
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control ref={passwordRef} type="password" placeholder="Password" />
+                        <Form.Control required ref={passwordRef} type="password" placeholder="Password" />
                     </Form.Group>
                     <p className='text-danger'>{errorMessage ? errorMessage : ''}</p>
                     <div className='d-flex justify-content-between align-items-center'>

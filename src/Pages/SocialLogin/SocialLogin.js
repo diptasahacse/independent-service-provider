@@ -9,24 +9,27 @@ const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     let navigate = useNavigate();
     let location = useLocation();
+    let errorMessage;
     let from = location.state?.from?.pathname || "/";
     const signInWithGoogleHandler = () => {
         signInWithGoogle()
-        console.log("Hello")
 
     }
     if (loading) {
         return <Loading></Loading>
 
     }
-    if(user){
+    if (user) {
         navigate(from, { replace: true });
 
     }
-    console.log(error)
+    if (error) {
+        errorMessage = error?.message
+    }
     return (
         <div>
             <div className='text-center m-3'>
+                <p className='text-danger'>{errorMessage ? errorMessage : ''}</p>
                 <button onClick={signInWithGoogleHandler} className='btn border btn-sm form-control'>
                     <img style={{ height: "30px", width: "30px" }} src={google} alt="" />
                     <span className='ms-1'>Continue With Google</span>
