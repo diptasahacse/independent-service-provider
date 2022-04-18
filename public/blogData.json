@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "Difference between authorization and authentication.",
+        "description": "This services includes 6hr coverage, Online gallery and Wedding Album."
+    },
+    {
+        "id": 2,
+        "name": "Why are you using firebase? What other options do you have to implement authentication?",
+        "description": "This services includes 8hr coverage, Online gallery, Wedding Album and Special services."
+    },
+    {
+        "id": 3,
+        "name": "What other services does firebase provide other than authentication",
+        "description": "This services includes 24hr coverage, Online gallery, Wedding Album, Special services and Wedding movie."  
+    }
+]
