@@ -17,18 +17,18 @@ const ResetPassword = () => {
     if (sending) {
         return <Loading></Loading>
     }
-    console.log(sending)
     if (error) {
         errorMessage = error.message
 
     }
-
-
     const forgetPasswordSubmitHandler = async (event) => {
         event.preventDefault()
         const email = emailRef.current.value;
         await sendPasswordResetEmail(email)
-        toast('Sent password reset email')
+        if (!error) {
+            toast('Sent password reset email')
+
+        }
 
 
     }
@@ -43,9 +43,7 @@ const ResetPassword = () => {
                         <Form.Label>Email address</Form.Label>
                         <Form.Control required ref={emailRef} type="email" placeholder="Enter email" />
                     </Form.Group>
-                    {
-                        errorMessage && <p className='text-danger'>{errorMessage}</p>
-                    }
+                    <p className='text-danger'>{errorMessage ? errorMessage : ''}</p>
                     <div className='text-center'>
                         <Button variant="primary" type="submit">
                             Send Reset Password
