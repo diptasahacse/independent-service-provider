@@ -2,16 +2,16 @@
     {
         "id": 1,
         "name": "Difference between authorization and authentication.",
-        "description": "So, what is the difference between authentication and authorization? Simply put, authentication is the process of verifying who someone is, whereas authorization is the process of verifying what specific applications, files, and data a user has access to. The situation is like that of an airline that needs to determine which people can come on board. The first step is to confirm the identity of a passenger to make sure they are who they say they are. Once a passenger’s identity has been determined, the second step is verifying any special services the passenger has access to, whether it’s flying first-class or visiting the VIP lounge."
+        "description": "Authorization and Authentication might sound same but they are completely different from each other. Authentication means authenticate someone's identity, but Authorization is a way to provide the permission to someone to access some private resource. That means, Authentication is the process of identify someone and Authorization is the process of granting someone to give access something. authorization is a way to check if the user have permission to use somethings or not. The Example of Authentication is, when we go to facebook or some other social media, we can not like, comment, share something before login, first of all we need to login. if we login by giving correct info then we can do some particular things. Other hand the example of Authorization is, We know some words which is Role. Role means verious type of access level like Admin, Moderator, Editor etc. all the particular Roll, they have different type of access level. means an Admin can have full access of the system, where Moderator and editor doesn't have. this is a simple example of authorization."
     },
     {
         "id": 2,
         "name": "Why are you using firebase? What other options do you have to implement authentication?",
-        "description": "This services includes 8hr coverage, Online gallery, Wedding Album and Special services."
+        "description": "Firebase is a Development tools which provide many things like, Authentication, Hosting, Realtime Database, Storage, Firestore Database and so one. The purpose of use firebase is, it is so much secure and have well documentation and most important things is, it is developed by Google. Firebase is a Backend as a service. it provides variety of tools and services to help Developers to develop quality apps. There are many authentication tools have on the web like, Parse, Back4App, AWS Amplify, Kuzzle and so one that's all are alternative of firebase."
     },
     {
         "id": 3,
         "name": "What other services does firebase provide other than authentication",
-        "description": "This services includes 24hr coverage, Online gallery, Wedding Album, Special services and Wedding movie."  
+        "description": "There are many services which Firebase provides, Most useful of them are: Cloud Firestore, Cloud Function, Hosting, Cloud storage, Google Analytics, Predictions, Cloud Messaging, Dynamic Link, Remote Config and so many services are provide firebase by Google."  
     }
 ]
