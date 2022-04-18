@@ -9,9 +9,6 @@ import Loading from '../Loading/Loading';
 
 const Header = () => {
     const [user, loading] = useAuthState(auth);
-    if(loading){
-        return <Loading></Loading>
-    }
     return (
         <Navbar bg="light" expand="lg">
             <Container>

@@ -7,7 +7,6 @@ import Loading from '../Shared/Loading/Loading';
 const RequireAuth = ({ children }) => {
     const [user, loading] = useAuthState(auth);
     let location = useLocation();
-    console.log(loading)
     
     if(loading){
         return <Loading></Loading>;
