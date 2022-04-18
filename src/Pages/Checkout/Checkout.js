@@ -48,12 +48,12 @@ const Checkout = () => {
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control required type="email" value={user?.email} disabled />
+                        <Form.Control type="email" value={user?.email} disabled />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicAddress">
                         <Form.Label>Address</Form.Label>
-                        <Form.Control type="text" placeholder="Enter address" />
+                        <Form.Control required type="text" placeholder="Enter address" />
                     </Form.Group>
 
 
