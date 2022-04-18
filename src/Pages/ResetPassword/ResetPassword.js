@@ -15,7 +15,7 @@ const ResetPassword = () => {
     let errorMessage;
     const emailRef = useRef('');
     if (sending) {
-        <Loading></Loading>
+        return <Loading></Loading>
     }
     console.log(sending)
     if (error) {

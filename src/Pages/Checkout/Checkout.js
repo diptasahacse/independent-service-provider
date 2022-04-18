@@ -30,8 +30,9 @@ const Checkout = () => {
                         <h5>Service Name: {serviceObj?.name}</h5>
                         <Card.Text>
                             {serviceObj?.description}
-                            <p>Price: ${serviceObj?.price}</p>
+
                         </Card.Text>
+                        <p>Price: ${serviceObj?.price}</p>
                     </Card.Body>
                 </Card>
 

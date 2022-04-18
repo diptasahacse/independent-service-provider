@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
 
@@ -19,31 +19,36 @@ const Register = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-    const registerFormOnSubmitHandler = event => {
+
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+
+    const registerFormOnSubmitHandler = async (event) => {
         event.preventDefault()
         const name = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        createUserWithEmailAndPassword(email, password)
+        await createUserWithEmailAndPassword(email, password)
+        await updateProfile({ displayName: name });
 
 
     }
-    if(loading){
+    if (loading || updating) {
         return <Loading></Loading>
     }
-    if(user){
-        message = <p className='text-success'>Verify link is sent your email. Please verify before login.</p>
+    if (user) {
+        message = 'Verify link is sent your email. Please verify before login.';
     }
-    const registerCheckHandler = (event) =>{
-        if(event.target.checked){
+    const registerCheckHandler = (event) => {
+        if (event.target.checked) {
             setIsChecked(true)
         }
-        else{
+        else {
             setIsChecked(false)
         }
 
     }
-    console.log(user)
+    
     return (
         <Container>
             <div className='text-center mt-5'>
@@ -53,11 +58,11 @@ const Register = () => {
                 <Form onSubmit={registerFormOnSubmitHandler}>
                     <Form.Group className="mb-3" controlId="formBasicFullName">
                         <Form.Label>Full Name</Form.Label>
-                        <Form.Control ref={nameRef} type="text" placeholder="Full Name" />
+                        <Form.Control required ref={nameRef} type="text" placeholder="Full Name" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control ref={emailRef} type="email" placeholder="Enter email" />
+                        <Form.Control required ref={emailRef} type="email" placeholder="Enter email" />
                         <Form.Text className="text-muted">
                             We'll never share your email with anyone else.
                         </Form.Text>
@@ -65,13 +70,13 @@ const Register = () => {
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control ref={passwordRef} type="password" placeholder="Password" />
+                        <Form.Control required ref={passwordRef} type="password" placeholder="Password" />
                     </Form.Group>
                     <Form.Group onChange={registerCheckHandler} className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Agree to out terms and conditions" />
                     </Form.Group>
                     {
-                        message && message
+                        message? <p className='text-success'>{message}</p> : ''
                     }
                     <div className='d-flex justify-content-between align-items-center'>
                         <Button disabled={!isChecked} size='sm' variant="primary" type="submit">
