@@ -29,8 +29,7 @@ const Checkout = () => {
                     <Card.Body>
                         <h5>Service Name: {serviceObj?.name}</h5>
                         <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk
-                            of the card's content.
+                            {serviceObj?.description}
                             <p>Price: ${serviceObj?.price}</p>
                         </Card.Text>
                     </Card.Body>

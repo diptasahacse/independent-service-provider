@@ -3,21 +3,21 @@
         "id": 1,
         "name": "SMART PACKAGE",
         "price": "2500",
-        "descriptionList": ["– 6 hours coverage","– Online gallery","– Wedding Album"],
+        "description": "This services includes 6hr coverage, Online gallery and Wedding Album.",
         "img": "https://i.ibb.co/Mfhn2KB/service1.jpg"
     },
     {
         "id": 2,
         "name": "BEST OPTION",
         "price": "3000",
-        "descriptionList": ["– 8 hours coverage","– Online gallery","– Wedding Album","– Special services"],
+        "description": "This services includes 8hr coverage, Online gallery, Wedding Album and Special services.",
         "img": "https://i.ibb.co/6bN8Dsx/service2.jpg"
     },
     {
         "id": 3,
-        "name": "SMART PACKAGE",
+        "name": "Full PACKAGE",
         "price": "4000",
-        "descriptionList": ["– 6 hours coverage","– Online gallery","– Wedding Album","– Wedding movie"],
+        "description": "This services includes 24hr coverage, Online gallery, Wedding Album, Special services and Wedding movie.",
         "img": "https://i.ibb.co/kqzCpTK/service3.png"
     }
 ]

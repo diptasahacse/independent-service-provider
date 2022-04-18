@@ -1,16 +1,14 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import ServiceDescription from './ServiceDescription/ServiceDescription';
-
 const Service = ({ service }) => {
-    const { id, name, price, descriptionList, img } = service;
+    const { id, name, price, description, img } = service;
     const navigate = useNavigate();
     const checkoutButtonHandler = () => {
-        localStorage.setItem('serviceid',id)
+        localStorage.setItem('serviceid', id)
         navigate('/checkout')
-        
-        
+
+
 
     }
 
@@ -20,11 +18,12 @@ const Service = ({ service }) => {
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
-                    <div className='text-center'>
+                    <Card.Text>
                         {
-                            descriptionList.map((item, index) => <ServiceDescription item={item} key={index}></ServiceDescription>)
+                            description
                         }
-                    </div>
+                        
+                    </Card.Text>
 
 
                 </Card.Body>
