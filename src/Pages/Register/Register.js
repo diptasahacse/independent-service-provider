@@ -57,7 +57,7 @@ const Register = () => {
     return (
         <Container>
             <div className='text-center mt-5'>
-                <h3 className='text-primary'>Nice to meet you</h3>
+                <h3 className='text-primary'>Register</h3>
             </div>
             <div className='w-50 mx-auto'>
                 <Form onSubmit={registerFormOnSubmitHandler}>
