@@ -32,7 +32,16 @@ const Register = () => {
         return <Loading></Loading>
     }
     if(user){
-        message = <p>Verify link is sent your email. </p>
+        message = <p className='text-success'>Verify link is sent your email. Please verify before login.</p>
+    }
+    const registerCheckHandler = (event) =>{
+        if(event.target.checked){
+            setIsChecked(true)
+        }
+        else{
+            setIsChecked(false)
+        }
+
     }
     console.log(user)
     return (
@@ -58,7 +67,7 @@ const Register = () => {
                         <Form.Label>Password</Form.Label>
                         <Form.Control ref={passwordRef} type="password" placeholder="Password" />
                     </Form.Group>
-                    <Form.Group onChange={() => setIsChecked(!isChecked)} className="mb-3" controlId="formBasicCheckbox">
+                    <Form.Group onChange={registerCheckHandler} className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Agree to out terms and conditions" />
                     </Form.Group>
                     {

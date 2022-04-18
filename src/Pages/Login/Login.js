@@ -1,19 +1,60 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import Loading from '../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
+    const emailRef = useRef('');
+    const passwordRef = useRef('');
+    let navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+    let errorMessage;
+    const loginFormSubmitHandler = (event) => {
+        event.preventDefault();
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+        signInWithEmailAndPassword(email, password)
+
+
+    }
+    if (loading) {
+        return <Loading></Loading>
+    }
+    if (!user?.user) {
+        errorMessage = '';
+
+
+    }
+    else if (!user?.user?.emailVerified) {
+        errorMessage = 'Please verify your email address';
+
+    }
+    else {
+        navigate(from, { replace: true });
+    }
+    if (error) {
+        errorMessage = error?.message
+    }
     return (
         <Container>
             <div className='text-center mt-5'>
                 <h3 className='text-primary'>Please Login</h3>
             </div>
             <div className='w-50 mx-auto'>
-                <Form className=''>
+                <Form onSubmit={loginFormSubmitHandler}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
+                        <Form.Control ref={emailRef} type="email" placeholder="Enter email" />
                         <Form.Text className="text-muted">
                             We'll never share your email with anyone else.
                         </Form.Text>
@@ -21,8 +62,9 @@ const Login = () => {
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Control ref={passwordRef} type="password" placeholder="Password" />
                     </Form.Group>
+                    <p className='text-danger'>{errorMessage ? errorMessage : ''}</p>
                     <div className='d-flex justify-content-between align-items-center'>
                         <Button size='sm' variant="primary" type="submit">
                             Login
