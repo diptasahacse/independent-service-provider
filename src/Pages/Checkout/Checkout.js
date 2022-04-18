@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Container, Form } from 'react-bootstrap';
+import { Button, Card, Container, Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import useService from '../../hooks/useService';
@@ -23,10 +23,22 @@ const Checkout = () => {
     }
     return (
         <Container>
-            <div className='border p-3 m-3 w-50 mx-auto'>
-                <h5>Service Name: {serviceObj?.name}</h5>
-                <p>Price: ${serviceObj?.price}</p>
+            <div className='m-3 w-50 mx-auto'>
+                <Card>
+                    <Card.Img variant="top" style={{ height: "250px" }} src={serviceObj?.img} />
+                    <Card.Body>
+                        <h5>Service Name: {serviceObj?.name}</h5>
+                        <Card.Text>
+                            Some quick example text to build on the card title and make up the bulk
+                            of the card's content.
+                            <p>Price: ${serviceObj?.price}</p>
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+
+
             </div>
+
             <div className=' w-75 mx-auto border p-3 m-3'>
                 <Form onSubmit={checkoutOnSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -44,8 +56,8 @@ const Checkout = () => {
                         <Form.Control type="text" placeholder="Enter address" />
                     </Form.Group>
 
-            
-                    
+
+
                     <Button variant="primary" size={'sm'} type="submit">
                         Book
                     </Button>
