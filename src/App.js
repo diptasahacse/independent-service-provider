@@ -12,6 +12,7 @@ import Login from './Pages/Login/Login';
 import Checkout from './Pages/Checkout/Checkout';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
 import ResetPassword from './Pages/ResetPassword/ResetPassword';
+import BlogDetails from './Pages/Blogs/BlogDetails/BlogDetails';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/blogs/:blogID' element={<BlogDetails></BlogDetails>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/checkout' element={
           <RequireAuth>

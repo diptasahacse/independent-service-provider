@@ -5,6 +5,9 @@ import dipta from '../../images/others/dipta.jpg'
 const About = () => {
     return (
         <Container>
+            <div>
+                <h2 className='text-primary'>About</h2>
+            </div>
             <div className='mt-5 text-center'>
                 <img src={dipta} className='rounded shadow border-top-0 border-bottom-0 rounded-circle border border-2 border-primary' style={{height:'200px', width:"200px"}} alt="" />
 
